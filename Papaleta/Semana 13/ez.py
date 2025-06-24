@@ -1,16 +1,44 @@
 import os
-# Se importa el módulo os para usar la función: os.path.exists(ruta)
-ARCHIVO = "estudiantes.txt"
+import getpass 
+# Definimos la constante para el archivo de estudiantes
+ARCHIVO = "estudiante.txt"
 
+# Cargar usuarios desde un archivo
+def cargar_usuarios():
+    usuarios = {}
+    if os.path.exists("usuarios.txt"):
+        with open("usuarios.txt", "r") as archivo:
+            for linea in archivo:
+                usuario, clave = linea.strip().split(",")
+                usuarios[usuario] = clave
+    return usuarios
+
+# Contraseña de acceso
+clave = "Papaleta2907"
+
+# Función para iniciar sesión
+def inicio():
+    print("INICIO DE SESIÓN")
+    intentos = 3
+    while intentos > 0:
+        Intento = getpass.getpass("Ingrese la contraseña: ")
+        if Intento == clave:
+            print("Acceso permitido.\n")
+            return True
+        else:
+            intentos -= 1
+            print(f"Contraseña incorrecta. Intentos restantes: {intentos}")
+    
+    print("Acceso bloqueado. Demasiados intentos fallidos.")
+    return False
+
+# Cargar estudiantes desde un archivo
 def cargar_estudiantes():
     estudiantes = []
-    # La función os.path.exists() verifica si un archivo o carpeta existe en una ruta determinada
     if os.path.exists(ARCHIVO):
         with open(ARCHIVO, "r") as archivo:
             for linea in archivo:
                 codigo, nombre, apellido, carrera = linea.strip().split(",")
-                # linea.strip() Elimina espacios y saltos de línea (\n) al principio o al final.
-                # split(",") Divide la cadena en una lista de partes, usando la coma como separador.
                 estudiantes.append({
                     "codigo": codigo,
                     "nombre": nombre,
@@ -18,17 +46,17 @@ def cargar_estudiantes():
                     "carrera": carrera
                 })
     return estudiantes
-    
-def guardar_estudiante(estudiantes):
+
+# Guardar estudiantes en un archivo
+def guardar_estudiantes(estudiantes):
     with open(ARCHIVO, "w") as archivo:
         for est in estudiantes:
             linea = f"{est['codigo']},{est['nombre']},{est['apellido']},{est['carrera']}\n"
             archivo.write(linea)
 
+# Crear un nuevo estudiante
 def crear_estudiante(estudiantes):
     codigo = input("Código del estudiante: ")
-    # Verificar si el código ya existe
-    # La función any() devuelve True si al menos un elemento de un iterable es verdadero.
     if any(est["codigo"] == codigo for est in estudiantes):
         print("El código ya existe\n")
         return
@@ -46,7 +74,8 @@ def crear_estudiante(estudiantes):
 
     guardar_estudiantes(estudiantes)
     print("Estudiante agregado correctamente.\n")
-    
+
+# Mostrar la lista de estudiantes
 def mostrar_estudiantes(estudiantes):
     if not estudiantes:
         print("No hay estudiantes registrados.\n")
@@ -57,6 +86,7 @@ def mostrar_estudiantes(estudiantes):
         print(f"Código: {est['codigo']}, Nombre: {est['nombre']} {est['apellido']}, Carrera: {est['carrera']}")
     print()
 
+# Actualizar la información de un estudiante
 def actualizar_estudiante(estudiantes):
     codigo = input("Ingresa el código del estudiante a actualizar: ")
     for est in estudiantes:
@@ -69,7 +99,7 @@ def actualizar_estudiante(estudiantes):
             return
     print("No se encontró estudiante con ese código.\n")
 
-
+# Eliminar un estudiante
 def eliminar_estudiante(estudiantes):
     codigo = input("Ingresa el código del estudiante a eliminar: ")
     for est in estudiantes:
@@ -80,19 +110,19 @@ def eliminar_estudiante(estudiantes):
             return
     print("No se encontró un estudiante con ese código.\n")
 
-
+# Menú principal
 def menu():
-    estudiantes: cargar_estudiantes()
+    estudiantes = cargar_estudiantes()
     while True:
         print("=======MENU CRUD ESTUDIANTES=======")
         print("1. Agregar estudiante")
         print("2. Mostrar estudiantes")
         print("3. Actualizar estudiante")
         print("4. Eliminar estudiante")
-        print("5. Salir")
-        opcion = input("Seleccione una opción(""1-5): ")
+        print("5. Salir")   
+        opcion = input("Seleccione una opción (1-5): ")
         if opcion == "1":
-            agregar_estudiante(estudiantes)
+            crear_estudiante(estudiantes)
         elif opcion == "2":
             mostrar_estudiantes(estudiantes)
         elif opcion == "3":
@@ -104,6 +134,7 @@ def menu():
             break
         else:
             print("Opción no válida. Intente de nuevo.")
-menu(  )
-    
-    
+
+# Ejecución del programa
+if inicio():
+    menu()
