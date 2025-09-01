@@ -1,0 +1,14 @@
+C:\Users\kleom\source\repos\EjerciciosConMenu\EjerciciosConMenu\bin\Debug\net8.0\EjerciciosConMenu.exe
+C:\Users\kleom\source\repos\EjerciciosConMenu\EjerciciosConMenu\bin\Debug\net8.0\EjerciciosConMenu.deps.json
+C:\Users\kleom\source\repos\EjerciciosConMenu\EjerciciosConMenu\bin\Debug\net8.0\EjerciciosConMenu.runtimeconfig.json
+C:\Users\kleom\source\repos\EjerciciosConMenu\EjerciciosConMenu\bin\Debug\net8.0\EjerciciosConMenu.dll
+C:\Users\kleom\source\repos\EjerciciosConMenu\EjerciciosConMenu\bin\Debug\net8.0\EjerciciosConMenu.pdb
+C:\Users\kleom\source\repos\EjerciciosConMenu\EjerciciosConMenu\obj\Debug\net8.0\EjerciciosConMenu.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kleom\source\repos\EjerciciosConMenu\EjerciciosConMenu\obj\Debug\net8.0\EjerciciosConMenu.AssemblyInfoInputs.cache
+C:\Users\kleom\source\repos\EjerciciosConMenu\EjerciciosConMenu\obj\Debug\net8.0\EjerciciosConMenu.AssemblyInfo.cs
+C:\Users\kleom\source\repos\EjerciciosConMenu\EjerciciosConMenu\obj\Debug\net8.0\EjerciciosConMenu.csproj.CoreCompileInputs.cache
+C:\Users\kleom\source\repos\EjerciciosConMenu\EjerciciosConMenu\obj\Debug\net8.0\EjerciciosConMenu.dll
+C:\Users\kleom\source\repos\EjerciciosConMenu\EjerciciosConMenu\obj\Debug\net8.0\refint\EjerciciosConMenu.dll
+C:\Users\kleom\source\repos\EjerciciosConMenu\EjerciciosConMenu\obj\Debug\net8.0\EjerciciosConMenu.pdb
+C:\Users\kleom\source\repos\EjerciciosConMenu\EjerciciosConMenu\obj\Debug\net8.0\EjerciciosConMenu.genruntimeconfig.cache
+C:\Users\kleom\source\repos\EjerciciosConMenu\EjerciciosConMenu\obj\Debug\net8.0\ref\EjerciciosConMenu.dll
