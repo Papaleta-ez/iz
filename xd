@@ -1,0 +1,183 @@
+using System;
+
+class Program {
+    static int contador = 0; // variable global
+
+    static void RegistrarAcceso() {
+        contador++;
+        Console.WriteLine($"El método ha sido llamado {contador} veces");
+    }
+
+    static void Main() {
+        RegistrarAcceso();
+        RegistrarAcceso();
+    }
+}
+
+using System;
+
+class Program {
+    static void AreaRectangulo() {
+        Console.Write("Ingrese la base: ");
+        double b = double.Parse(Console.ReadLine());
+        Console.Write("Ingrese la altura: ");
+        double h = double.Parse(Console.ReadLine());
+        double area = b * h; // variable local
+        Console.WriteLine("Área: " + area);
+    }
+
+    static void Main() {
+        AreaRectangulo();
+    }
+}
+
+using System;
+
+class Program {
+    static string escala = "Celsius a Fahrenheit";
+
+    static double Convertir(double valor) {
+        if (escala == "Celsius a Fahrenheit")
+            return valor * 9 / 5 + 32;
+        else
+            return (valor - 32) * 5 / 9;
+    }
+
+    static void Main() {
+        Console.WriteLine(Convertir(25));
+    }
+}
+
+using System;
+
+class Program {
+    static double sumaTotal = 0;
+
+    static void AgregarNumero() {
+        Console.Write("Ingrese un número: ");
+        double num = double.Parse(Console.ReadLine());
+        sumaTotal += num;
+        Console.WriteLine("Suma acumulada: " + sumaTotal);
+    }
+
+    static void Main() {
+        AgregarNumero();
+        AgregarNumero();
+    }
+}
+
+
+using System;
+
+class Program {
+    static void CalcularEdad() {
+        Console.Write("Ingrese su año de nacimiento: ");
+        int nacimiento = int.Parse(Console.ReadLine());
+        int edad = DateTime.Now.Year - nacimiento; // local
+        Console.WriteLine("Tu edad es: " + edad);
+    }
+
+    static void Main() {
+        CalcularEdad();
+    }
+}
+
+
+using System;
+
+class Program {
+    static int intentos = 0;
+    static int secreto = 7;
+
+    static void Adivinar() {
+        Console.Write("Adivina el número: ");
+        int num = int.Parse(Console.ReadLine());
+        intentos++;
+        if (num == secreto)
+            Console.WriteLine($"¡Correcto en {intentos} intentos!");
+        else
+            Console.WriteLine("Incorrecto. Intentos: " + intentos);
+    }
+
+    static void Main() {
+        while (true) Adivinar();
+    }
+}
+
+using System;
+
+class Program {
+    static void PromedioNotas() {
+        Console.Write("Nota 1: ");
+        double n1 = double.Parse(Console.ReadLine());
+        Console.Write("Nota 2: ");
+        double n2 = double.Parse(Console.ReadLine());
+        Console.Write("Nota 3: ");
+        double n3 = double.Parse(Console.ReadLine());
+
+        double promedio = (n1 + n2 + n3) / 3;
+        Console.WriteLine("Promedio: " + promedio);
+    }
+
+    static void Main() {
+        PromedioNotas();
+    }
+}
+
+using System;
+
+class Program {
+    static bool sesionIniciada = false;
+
+    static void IniciarSesion() {
+        Console.Write("Contraseña: ");
+        string clave = Console.ReadLine();
+        if (clave == "1234") {
+            sesionIniciada = true;
+            Console.WriteLine("Sesión iniciada");
+        } else {
+            Console.WriteLine("Contraseña incorrecta");
+        }
+    }
+
+    static void Main() {
+        IniciarSesion();
+    }
+}
+
+
+using System;
+
+class Program {
+    static double Perimetro(double radio) {
+        double perimetro = 2 * Math.PI * radio;
+        return perimetro;
+    }
+
+    static void Main() {
+        Console.WriteLine(Perimetro(5));
+    }
+}
+
+
+
+using System;
+
+class Program {
+    static int puntuacion = 0;
+
+    static void GanarPuntos() {
+        puntuacion += 10;
+        Console.WriteLine("Puntuación: " + puntuacion);
+    }
+
+    static void Main() {
+        GanarPuntos();
+        GanarPuntos();
+    }
+}
+
+
+
+
+
